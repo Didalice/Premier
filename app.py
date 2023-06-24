@@ -1,23 +1,28 @@
 import streamlit as st
-from streamlit_folium import folium_static
-import folium
 
-PAGE_CONFIG = {"page_title":"Aplicação de Mapas","page_icon":":smiley:","layout":"centered"}
-st.set_page_config(**PAGE_CONFIG)
+st.set_page_config(
+    page_title="Hello",
+    page_icon="👋",
+)
 
-def main():
-	st.title("Como adicionar mapas no StreamLit")
-	st.subheader("Baseado num caderno do Colab")
-	menu = ["Home","Mapa"]
-	choice = st.sidebar.selectbox('Menu',menu)
-	if choice == 'Home':
-		st.subheader("Página Inicial 1")
-	elif choice == 'Mapa':
-		st.subheader("Visualizar Mapa")
-		with st.echo():
-			m = folium.Map (location = [-25.5,-49.3],tiles = 'Stamen Terrain', zoom_start =  11)
-			folium_static(m)
-	else: 
-		st.subheader("")
-if __name__ == '__main__':
-	main()
+st.write("# Welcome to Streamlit! 👋")
+
+st.sidebar.success("Select a demo above.")
+
+st.markdown(
+    """
+    Streamlit is an open-source app framework built specifically for
+    Machine Learning and Data Science projects.
+    **👈 Select a demo from the sidebar** to see some examples
+    of what Streamlit can do!
+    ### Want to learn more?
+    - Check out [streamlit.io](https://streamlit.io)
+    - Jump into our [documentation](https://docs.streamlit.io)
+    - Ask a question in our [community
+        forums](https://discuss.streamlit.io)
+    ### See more complex demos
+    - Use a neural net to [analyze the Udacity Self-driving Car Image
+        Dataset](https://github.com/streamlit/demo-self-driving)
+    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+"""
+)
